@@ -7,6 +7,8 @@ import helixImg from '../assets/images/tech2.jpg';
 import showcaseImg from '../assets/images/tech4.jpg';
 import brainImg from '../assets/images/tech5.jpg';
 import infrastructureImg from '../assets/images/tech6.jpg';
+import icoImg from '../assets/images/ico.png';
+
 
 // Icon components
 const PlayIcon = () => (
@@ -24,10 +26,7 @@ const ArrowIcon = () => (
 const HomePage = () => {
   // Feature cards data
   const features = [
-    { icon: '⚡', title: 'Real-Time Processing', desc: 'Sub-millisecond data processing with intelligent caching.' },
-    { icon: '🔗', title: 'Seamless Integration', desc: 'Connect with 200+ data sources out of the box.' },
-    { icon: '🛡️', title: 'Enterprise Security', desc: 'SOC 2 compliant with end-to-end encryption.' },
-    { icon: '📊', title: 'Advanced Analytics', desc: 'AI-powered insights and predictive modeling.' },
+    { icon: <img src={icoImg} alt="icon" className="hp-feature-icon-img" />, title: 'kevin e gratar', desc: 'nu glumesc' },
   ];
 
   // Stats data
@@ -39,7 +38,7 @@ const HomePage = () => {
   ];
 
   // Trust logos
-  const trustLogos = ['Spotify', 'Slack', 'Dropbox', 'Zoom', 'Stripe'];
+  const trustLogos = ['Spotify', 'Slack', 'Dropbox', 'Zoom', 'Stripe', 'Shopify', 'GitHub', 'Atlassian', 'Salesforce', 'Twilio', 'Canva', 'Twitter', 'Meta', 'Google', 'Microsoft', 'Amazon', 'Netflix', 'Airbnb', 'Uber', 'Lyft', 'Pinterest', 'Reddit', 'Snapchat', 'TikTok', 'PayPal', 'Adobe', 'Intel', 'IBM', 'Dell', 'HP', 'Oracle', 'SAP', 'VMware', 'Nvidia', 'AMD', 'Qualcomm', 'Samsung', 'LG', 'Sony', 'Panasonic', 'Siemens', 'Bosch', 'Philips', 'GE', 'Coca-Cola', 'PepsiCo', 'Redbull', 'Procter & Gamble', 'Nestlé', 'L\'Oréal', 'Oreo', 'Mitshubishi', 'Honda'];
 
   return (
     <div className="hp-container">
@@ -47,19 +46,13 @@ const HomePage = () => {
       <section className="hp-hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="hp-hero-overlay" />
         <div className="hp-hero-content">
-          <span className="hp-badge">✨ Modular Data Infrastructure</span>
+          <span className="hp-badge">cel mai bun porto</span>
           <h1 className="hp-title">
-            Build, Run, and Scale<br />
-            <span className="hp-title-accent">with Intelligent Data</span>
+            Build, Run, si prajesti<br />
+            <span className="hp-title-accent">with romanians</span>
           </h1>
-          <p className="hp-subtitle">
-            A modern platform that connects your data, powers real-time analytics,
-            and scales effortlessly as your business grows.
-          </p>
-          <div className="hp-cta">
-            <button className="hp-btn hp-btn-primary">Get Started Free</button>
-            <button className="hp-btn hp-btn-ghost"><PlayIcon /> Watch Demo</button>
-          </div>
+         
+        
           <div className="hp-trust">
             <span className="hp-trust-label">Trusted by 2,000+ companies</span>
             <div className="hp-trust-logos">
@@ -155,12 +148,12 @@ const HomePage = () => {
         </div>
         <div className="hp-infra-content">
           <span className="hp-label">Infrastructure</span>
-          <h2 className="hp-heading">Built for scale, designed for speed</h2>
+          <h2 className="hp-heading">Built for people, designed for romanians</h2>
           <p className="hp-text">
             Distributed architecture that handles millions of requests 
             with sub-millisecond latency across global data centers.
           </p>
-          <button className="hp-btn hp-btn-primary">Start Building Today</button>
+          <button className="hp-btn hp-btn-primary">Start Gooning Today</button>
         </div>
       </section>
 

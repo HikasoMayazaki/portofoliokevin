@@ -1,84 +1,99 @@
 // /src/components/Navbar.tsx
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../assets/css/Navbar.css';
+import Lowk from '../assets/images/ico.png';
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Track scroll for navbar background
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
-    { label: 'Overview', href: '#overview' },
-    { label: 'Features', href: '#features' },
-    { label: 'About', href: '#about' },
-    { label: 'Pricing', href: '#pricing' },
+    { label: 'Home', to: '/' },
+    { label: 'Search', to: '/search' },
+    { label: 'Destinations', to: '#destinations' },
+    { label: 'Packages', to: '#packages' },
+    { label: 'About Us', to: '#about' },
+    { label: 'Contact', to: '#contact' },
   ];
 
   return (
     <>
-      <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
+      <nav className="navbar-container">
         {/* Logo */}
-        <a href="/" className="nav-logo">
-          <div className="nav-logo-icon">T</div>
-          <span>tuffulos</span>
-        </a>
+        <NavLink to="/" className="navbar-logo">
+            <img src={Lowk} alt="Logo" />
+        </NavLink>
 
-        {/* Desktop Links */}
-        <ul className="nav-links">
+        {/* Desktop Navigation Links */}
+        <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a href={link.href} className="nav-link">{link.label}</a>
+              {link.to.startsWith('#') ? (
+                <a href={link.to} className="navbar-link">
+                  {link.label}
+                </a>
+              ) : (
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `navbar-link ${isActive ? 'navbar-link-active' : ''}`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              )}
             </li>
           ))}
         </ul>
 
-        {/* Desktop Actions */}
-        <div className="nav-actions">
-          <button className="nav-btn nav-btn-ghost">Sign In</button>
-          <button className="nav-btn nav-btn-primary">Get Started</button>
+        {/* Actions */}
+        <div className="navbar-actions">
+          <NavLink to="/search" className="navbar-search-btn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </NavLink>
+          <button
+            className="navbar-menu-btn"
+            aria-label="Menu"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className={`nav-toggle ${isMobileOpen ? 'nav-toggle-active' : ''}`}
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span /><span /><span />
-        </button>
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`nav-mobile ${isMobileOpen ? 'nav-mobile-open' : ''}`}>
-        <ul className="nav-mobile-links">
+      <div className={`navbar-mobile-menu ${isMobileOpen ? 'navbar-mobile-open' : ''}`}>
+        <ul className="navbar-mobile-links">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="nav-mobile-link"
-                onClick={() => setIsMobileOpen(false)}
-              >
-                {link.label}
-              </a>
+              {link.to.startsWith('#') ? (
+                <a
+                  href={link.to}
+                  className="navbar-mobile-link"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `navbar-mobile-link ${isActive ? 'navbar-link-active' : ''}`
+                  }
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  {link.label}
+                </NavLink>
+              )}
             </li>
           ))}
         </ul>
-        <div className="nav-mobile-actions">
-          <button className="nav-btn nav-btn-ghost">Sign In</button>
-          <button className="nav-btn nav-btn-primary">Get Started</button>
-        </div>
       </div>
-
-      {/* Backdrop */}
-      {isMobileOpen && (
-        <div className="nav-backdrop" onClick={() => setIsMobileOpen(false)} />
-      )}
     </>
   );
 };

@@ -4,7 +4,8 @@
 .hp-container {
   --clr-bg: #0a0e1a;
   --clr-surface: #111827;
-  --clr-primary: #3b82f6;
+  --clr-primary: #2d3c3c;
+  --clr-secondary: #ff6b9d;
   --clr-accent: #8b5cf6;
   --clr-cyan: #06b6d4;
   --clr-text: #ffffff;
