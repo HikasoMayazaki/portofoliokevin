@@ -16,6 +16,7 @@ const SearchPage = () => {
   const [images, setImages] = useState<SpaceImage[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [hasSearched, setHasSearched] = useState(false); // Track if user has searched

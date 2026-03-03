@@ -1,0 +1,73 @@
+/* Basic Snake game styles — used alongside inline styles */
+
+.snake-wrapper {
+	min-height: 100vh;
+	background: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: monospace;
+}
+
+.snake-window {
+	background: #111;
+	border: 2px solid #00ff66;
+	box-shadow: 0 0 25px #00ff66;
+}
+
+.snake-titleBar {
+	background: #003300;
+	color: #00ff66;
+	padding: 6px 10px;
+	font-weight: bold;
+	border-bottom: 2px solid #00ff66;
+}
+
+.snake-board {
+	position: relative;
+	background: #000;
+	image-rendering: pixelated;
+}
+
+.snake-segment {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background: #00ff66;
+	box-shadow: 0 0 6px #00ff66;
+}
+
+.snake-food {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background: #ff0033;
+	box-shadow: 0 0 8px #ff0033;
+}
+
+.snake-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6px 10px;
+	color: #00ff66;
+	border-top: 2px solid #00ff66;
+}
+
+.snake-error {
+	color: #ff0033;
+	font-weight: bold;
+}
+
+.snake-button {
+	background: #000;
+	color: #00ff66;
+	border: 1px solid #00ff66;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+
+/* Utility to ensure board stays pixel-perfect */
+.snake-board * {
+	box-sizing: border-box;
+}

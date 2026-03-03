@@ -4,16 +4,20 @@ import { NavLink } from 'react-router-dom';
 import '../assets/css/Navbar.css';
 import Lowk from '../assets/images/ico.png';
 
-const Navbar = () => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+type Props = {
+  theme?: 'light' | 'dark';
+  toggleTheme?: () => void;
+};
 
+const Navbar = ({ theme = 'light', toggleTheme }: Props) => {
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const navLinks = [
     { label: 'Home', to: '/' },
     { label: 'Search', to: '/search' },
-    { label: 'Destinations', to: '#destinations' },
-    { label: 'Packages', to: '#packages' },
-    { label: 'About Us', to: '#about' },
-    { label: 'Contact', to: '#contact' },
+    { label: 'Destinations', to: '/destinations' },
+    { label: 'Snake game', to: '/snake' },
+    { label: 'News feed', to: '/news' },
+    { label: 'Weather Forecast', to: '/weather' },
   ];
 
   return (
@@ -54,6 +58,14 @@ const Navbar = () => {
               <path d="M21 21l-4.35-4.35" />
             </svg>
           </NavLink>
+          <button
+            className="navbar-theme-btn"
+            aria-label="Toggle theme"
+            onClick={() => toggleTheme && toggleTheme()}
+            title={theme === 'dark' ? 'Switch to light' : 'Switch to dark'}
+          >
+            {theme === 'dark' ? '☀' : '☾'}
+          </button>
           <button
             className="navbar-menu-btn"
             aria-label="Menu"
