@@ -38,7 +38,7 @@ const HomePage = () => {
   ];
 
   // Trust logos
-  const trustLogos = ['Spotify', 'Slack', 'Dropbox', 'Zoom', 'Stripe', 'Shopify', 'GitHub', 'Atlassian', 'Salesforce', 'Twilio', 'Canva', 'Twitter', 'Meta', 'Google', 'Microsoft', 'Amazon', 'Netflix', 'Airbnb', 'Uber', 'Lyft', 'Pinterest', 'Reddit', 'Snapchat', 'TikTok', 'PayPal', 'Adobe', 'Intel', 'IBM', 'Dell', 'HP', 'Oracle', 'SAP', 'VMware', 'Nvidia', 'AMD', 'Qualcomm', 'Samsung', 'LG', 'Sony', 'Panasonic', 'Siemens', 'Bosch', 'Philips', 'GE', 'Coca-Cola', 'PepsiCo', 'Redbull', 'Procter & Gamble', 'Nestlé', 'L\'Oréal', 'Oreo', 'Mitshubishi', 'Honda'];
+  const trustLogos = ['Spotify', 'Slack', 'Dropbox', 'Zoom', 'Stripe', 'Shopify', 'GitHub', 'Atlassian', 'Salesforce', 'Twilio', 'Canva', 'Twitter', 'Meta', 'Google', 'DoorDash', 'Uber', 'Airbnb', 'Netflix', 'PayPal', 'Square', 'Pinterest' ];
 
   return (
     <div className="hp-container">

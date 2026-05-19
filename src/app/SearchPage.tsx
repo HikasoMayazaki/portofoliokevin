@@ -22,7 +22,7 @@ const SearchPage = () => {
   const [hasSearched, setHasSearched] = useState(false); // Track if user has searched
 
   const ITEMS_PER_PAGE = 20;
-  const API_BASE = 'http://localhost:8000/api/NasaImages/search';
+  const API_BASE = import.meta.env.VITE_API_BASE_URL + '/api/NasaImages/search';
 
   // Fetch images from API
   const fetchImages = useCallback(async (searchQuery: string, pageNum: number, append = false) => {

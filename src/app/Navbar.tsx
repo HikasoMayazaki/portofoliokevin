@@ -14,7 +14,7 @@ const Navbar = ({ theme = 'light', toggleTheme }: Props) => {
   const navLinks = [
     { label: 'Home', to: '/' },
     { label: 'Search', to: '/search' },
-    { label: 'Destinations', to: '/destinations' },
+    { label: 'Planets', to: '/planets' },
     { label: 'Snake game', to: '/snake' },
     { label: 'News feed', to: '/news' },
     { label: 'Weather Forecast', to: '/weather' },

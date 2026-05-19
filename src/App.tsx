@@ -7,6 +7,7 @@ import WeatherPage from './app/WeatherPage';
 import NewsFeed from './app/newsfeed';
 import './assets/css/dark-win98.css';
 import SnakeGame from './app/SnakeGame';
+import PlanetPage from './app/PlanetPage';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -37,6 +38,8 @@ function App() {
           <Route path="/weather" element={<WeatherPage />} /> {/* Add this line */}
           <Route path="/news" element={<NewsFeed />} /> {/* Add this line */}
           <Route path="/snake" element={<SnakeGame />} /> {/* Add this line */}
+          <Route path="/planets" element={<PlanetPage />} /> {/* Add this line */}
+
         </Routes>
       </BrowserRouter>
     </div>
