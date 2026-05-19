@@ -11,11 +11,11 @@ import icoImg from '../assets/images/ico.png';
 
 
 // Icon components
-const PlayIcon = () => (
+/* const PlayIcon = () => (
   <svg className="hp-btn-icon" viewBox="0 0 24 24" fill="none">
     <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
   </svg>
-);
+); */
 
 const ArrowIcon = () => (
   <svg className="hp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
