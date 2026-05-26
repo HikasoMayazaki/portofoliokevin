@@ -20,7 +20,7 @@ interface SatelliteDto {
   description?: string;
 }
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL + '/api/Planets';
+const API_BASE = import.meta.env.VITE_API_BASE_URL + 'api/Planets';
 
 const PLANET_COLORS: Record<string, string> = {
   Mercury: '#8c7853',
