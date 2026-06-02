@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className={`app-root ${theme === 'dark' ? 'theme-dark win98-doom' : 'theme-light'}`}>
-      <BrowserRouter basename='/portofoliokevin'>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <Routes>
           <Route path="/" element={<HomePage />} />
